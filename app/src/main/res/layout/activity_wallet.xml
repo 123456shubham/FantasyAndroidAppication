@@ -193,11 +193,17 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/wallet_transaction"
-            tools:listitem="@layout/custom_transaction_balance"
             android:layout_width="match_parent"
             android:layout_marginBottom="70dp"
             android:layout_height="match_parent"/>
 
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/wallet_no_trans"
+            android:src="@drawable/no_tran"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
 

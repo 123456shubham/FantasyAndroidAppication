@@ -190,10 +190,10 @@ public class HomePage extends AppCompatActivity implements DataPassringInterface
                                 String cid=jsonObject3.getString("cid");
 
                                 JSONObject jsonObject4 = jsonObject2.getJSONObject("teama");
-                                String teamname1 = jsonObject4.getString("name");
+                                String teamname1 = jsonObject4.getString("short_name");
                                 String teamimage1 = jsonObject4.getString("logo_url");
                                 JSONObject jsonObject5 = jsonObject2.getJSONObject("teamb");
-                                String teamname2 = jsonObject5.getString("name");
+                                String teamname2 = jsonObject5.getString("short_name");
                                 String teamimage2 = jsonObject5.getString("logo_url");
 
                                 ModelClass mm = new ModelClass();

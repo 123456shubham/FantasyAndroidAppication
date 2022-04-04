@@ -20,6 +20,7 @@ import com.aryan.stumps11.CreateTeam.CreateTeams;
 import com.aryan.stumps11.CreateTeam.DataBase;
 import com.aryan.stumps11.CreateTeam.GreenBackground;
 import com.aryan.stumps11.EditTeam.EditTeamActivity;
+import com.aryan.stumps11.Extra.CommonData;
 import com.aryan.stumps11.HomePageClick.Contests;
 import com.aryan.stumps11.HomePageClick.db.MyTeamModel;
 import com.aryan.stumps11.Model.ModelClass;
@@ -55,29 +56,25 @@ public class MyTeamAdapter extends RecyclerView.Adapter<MyTeamAdapter.ViewHolder
         holder.tvCaptinName.setText(myDummyTeamPlayer11.getcName());
         holder.tvVCName.setText(myDummyTeamPlayer11.getVcName());
         holder.tvMyTeamId.setText("My Match ID : "+myDummyTeamPlayer11.getTeamID());
-        holder.tvTotalBowl.setText(myDummyTeamPlayer11.getTotalBwl());
-        holder.tvTotalBat.setText(myDummyTeamPlayer11.getTotalBat());
-        holder.tvTotalWk.setText(myDummyTeamPlayer11.getTotalBat());
-        holder.tvTotalAll.setText(myDummyTeamPlayer11.getTotalAR());
+        holder.tvTotalBowl.setText("BOWL "+myDummyTeamPlayer11.getTotalBwl());
+        holder.tvTotalBat.setText("BAT "+myDummyTeamPlayer11.getTotalBat());
+        holder.tvTotalWk.setText("WK "+myDummyTeamPlayer11.getTotalWk());
+        holder.tvTotalAll.setText("AR "+myDummyTeamPlayer11.getTotalAR());
+
+       String id= myDummyTeamPlayer11.getUserId();
+
+        SharedPreferences preferences = contests.getSharedPreferences("_ID", Context.MODE_PRIVATE);
+        preferences.edit().putString("ID",id).apply();
 
         String cid=myDummyTeamPlayer11.getCid();
 
-
-
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent teamPreview=new Intent(contests, GreenBackground.class);
-//                contests.startActivity(teamPreview);
-//
-//            }
-//        });
         holder.imageViewEditTeam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(contests, EditTeamActivity.class);
                 intent .putExtra("match_id",myDummyTeamPlayer11.getTeamID());
                 intent.putExtra("cid",cid);
+                intent.putExtra(CommonData.userId,myDummyTeamPlayer11.getUserId());
                 intent.putExtra("id",myDummyTeamPlayer11.getUserId());
 //                intent.putExtra("wk",myDummyTeamPlayer11.getTotalWk());
 //                intent.putExtra("all",myDummyTeamPlayer11.getTotalAR());
@@ -87,12 +84,6 @@ public class MyTeamAdapter extends RecyclerView.Adapter<MyTeamAdapter.ViewHolder
                 contests.startActivity(intent);
             }
         });
-//        holder.tvVCName.setText(myDummyTeamPlayer11.getVcaptain().toString());
-//        holder.tvTeamNameA.setText(myDummyTeamPlayer11);
-
-
-
-
     }
 
     @Override
@@ -111,19 +102,14 @@ public class MyTeamAdapter extends RecyclerView.Adapter<MyTeamAdapter.ViewHolder
             super(itemView);
             tvCaptinName=itemView.findViewById(R.id.custom_my_team_c_name);
             imgCaptain=itemView.findViewById(R.id.custom_my_team_c_player);
-
             tvVCName=itemView.findViewById(R.id.custom_my_team_vc_name);
             imgVCNAme=itemView.findViewById(R.id.custom_my_team_vc_player);
             imageViewEditTeam=itemView.findViewById(R.id.custom_my_team_edit);
             tvMyTeamId=itemView.findViewById(R.id.custom_my_team_id);
-
             tvTotalWk=itemView.findViewById(R.id.my_teams_total_wk);
             tvTotalBat=itemView.findViewById(R.id.my_team_total_bat);
             tvTotalBowl=itemView.findViewById(R.id.my_team_total_bowl);
             tvTotalAll=itemView.findViewById(R.id.my_team_total_all);
-
-
-
         }
     }
 }

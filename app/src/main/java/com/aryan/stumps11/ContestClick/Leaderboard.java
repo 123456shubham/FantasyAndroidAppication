@@ -45,7 +45,7 @@ public class Leaderboard extends Fragment {
         View view= inflater.inflate(R.layout.fragment_leaderboard, container, false);
         list=new ArrayList<>();
         teamId=TeamID;
-        Toast.makeText(getContext(),"Team id"+teamId,Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(getContext(),"Team id"+teamId,Toast.LENGTH_SHORT).show();
         init(view);
         return view;
     }
@@ -61,7 +61,7 @@ public class Leaderboard extends Fragment {
         String tokenName="Bearer "+retrivedToken;
 
 
-        CheckConnection.api.getLeaderBoard(tokenName,"623049de528890c52d805e0d").enqueue(new Callback<LeaderBoardResponse>() {
+        CheckConnection.api.getLeaderBoard(tokenName,teamId).enqueue(new Callback<LeaderBoardResponse>() {
             @Override
             public void onResponse(Call<LeaderBoardResponse> call, Response<LeaderBoardResponse> response) {
                 if (response.isSuccessful()){

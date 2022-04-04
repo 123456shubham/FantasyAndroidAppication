@@ -84,13 +84,7 @@ public class MyTeams extends Fragment {
         progressDialog.setMessage("Loading...");
         progressDialog.show();
         String MATCHID=Match_id;
-
         Log.e("opop",MATCHID+"");
-
-
-
-
-
         getDummyData();
 
     return view;
@@ -100,16 +94,12 @@ public class MyTeams extends Fragment {
         progressDialog.setTitle("Stumps11");
         progressDialog.setMessage("Loading...");
         progressDialog.show();
-
-
-
         SharedPreferences preferences = getContext().getSharedPreferences("MY_APP", Context.MODE_PRIVATE);
         String retrivedToken  = preferences.getString("TOKEN",null);//second parameter default value.
         String tokenName="Bearer "+retrivedToken;
-        String url=CheckConnection.BASE_URL+"/api/user/team/temp/list";
+        String url=CheckConnection.BASE_URL+"/api/user/team/temp/list?match_id="+Match_id;
         myTeamDummyModel=new MyTeamDummyModel();
         myTeamAdapter=new MyTeamAdapter(myTeamDummyModelList,getContext());
-
         try{
 //            progressDialog.dismiss();
             myTeamDummyModelList=new ArrayList<>();
@@ -117,22 +107,17 @@ public class MyTeams extends Fragment {
             StringRequest stringRequest=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-
                     try{
                         JSONObject jsonObject=new JSONObject(response);
                         String status=jsonObject.getString("status");
 //                        Toast.makeText(getContext(), "dd"+status, Toast.LENGTH_SHORT).show();
-
-
                         if (status.equals("200")){
                             JSONArray jsonArray= jsonObject.getJSONArray("data1");
                             if(jsonArray.length()==0){
                                 imgNoMatch.setVisibility(View.VISIBLE);
                                 progressDialog.dismiss();
-
                             }
                             for (int i=0; i<jsonArray.length(); i++){
-
                                 JSONObject jsonObject2=jsonArray.getJSONObject(i);
                                 String teamId= jsonObject2.getString("teamId");
                                 String userId=jsonObject2.getString("_id");
@@ -141,20 +126,18 @@ public class MyTeams extends Fragment {
                                 myTeamDummyModel.setUserId(userId);
                                 myTeamDummyModel.setCid(cid);
                                 JSONObject rule=jsonObject2.getJSONObject("roles");
-
                                 String totalWk=rule.getString("wk");
                                 String totalBat=rule.getString("bat");
                                 String totalAll=rule.getString("all");
                                 String totalBowl=rule.getString("bowl");
-
                                 myTeamDummyModel.setTotalWk(totalWk);
                                 myTeamDummyModel.setTotalBat(totalBat);
                                 myTeamDummyModel.setTotalBwl(totalBowl);
                                 myTeamDummyModel.setTotalAR(totalAll);
-
                                 JSONArray jsonArray1=jsonObject2.getJSONArray("vcaptain");
-                                for (int j=0; j<jsonArray1.length(); j++){
-                                    JSONObject jsonObject3=jsonArray1.getJSONObject(j);String vcName=jsonObject3.getString("name");
+                                for (int j=0; j<jsonArray1.length(); j++) {
+                                    JSONObject jsonObject3 = jsonArray1.getJSONObject(j);
+                                    String vcName = jsonObject3.getString("name");
                                     myTeamDummyModel.setVcName(vcName);
                                 }
                                 JSONArray jsonArray2=jsonObject2.getJSONArray("captain");
@@ -163,6 +146,7 @@ public class MyTeams extends Fragment {
                                     String cName=object.getString("name");
                                     myTeamDummyModel.setcName(cName);
                                 }
+
                                 myTeamDummyModelList.add(myTeamDummyModel);
                                 myTeamAdapter=new MyTeamAdapter(myTeamDummyModelList,getContext());
                                 myRecyclerview.setAdapter(myTeamAdapter);

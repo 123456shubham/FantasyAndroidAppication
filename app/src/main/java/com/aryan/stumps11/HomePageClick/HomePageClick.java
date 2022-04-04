@@ -35,7 +35,7 @@ import java.time.format.DateTimeFormatter;
 import maes.tech.intentanim.CustomIntent;
 
 public class HomePageClick extends AppCompatActivity  {
-    public static String Match_id,cid;
+    public static String Match_id,cid,userId;
     TabLayout tt;
     ViewPager vv;
     ImageView i16;
@@ -116,7 +116,6 @@ public class HomePageClick extends AppCompatActivity  {
 
         if(intent.hasExtra(CommonData.Match_id)){
             Match_id=intent.getStringExtra(CommonData.Match_id);
-
             Log.e("klfk",Match_id+"");
 
         }
@@ -124,6 +123,12 @@ public class HomePageClick extends AppCompatActivity  {
         if (intent.hasExtra(CommonData.C_I_D)){
             cid=intent.getStringExtra(CommonData.C_I_D);
             Log.e("cid>>>",cid);
+        }
+
+        if (intent.hasExtra(CommonData.userId)){
+            userId=intent.getStringExtra(CommonData.userId);
+            Log.e("user id>>>",userId);
+
         }
 
 

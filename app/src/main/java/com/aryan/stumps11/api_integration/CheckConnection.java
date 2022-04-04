@@ -9,8 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class CheckConnection {
 //        public static String BASE_URL="http://13.235.92.159:4228";  // aws server
       ////NewBaseUrl
-//        public static String BASE_URL="http://Stumps11.com:3000";  // aws server
-      public static String BASE_URL="http://192.168.68.76:4228"; //  sachin local server
+        public static String BASE_URL="http://Stumps11.com:3000";  // aws server
+//      public static String BASE_URL="http://192.168.68.76:4228"; //  sachin local server
 
     ///public static String image="http://192.168.68.69:4229/documents/panCard/";
      public static String image="http://Stumps11.com:3000/documents/panCard/";

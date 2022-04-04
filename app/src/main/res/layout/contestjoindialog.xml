@@ -128,7 +128,7 @@
                     android:layout_marginRight="10dp"
                     android:fontFamily="@font/amiko_bold"
                     android:text="Rs 90"
-                    android:textColor="@color/Color1" />
+                    android:textColor="@color/Color5" />
 
             </RelativeLayout>
 

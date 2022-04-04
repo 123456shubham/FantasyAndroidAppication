@@ -24,6 +24,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.aryan.stumps11.ApiModel.profile.DummyTeamResponse.MyTeamDummyModel;
 import com.aryan.stumps11.ApiModel.profile.context.ContextData;
 import com.aryan.stumps11.ApiModel.profile.createTeam.CreateReqData;
 import com.aryan.stumps11.ApiModel.profile.createTeam.CreateTeamReq;
@@ -41,6 +42,7 @@ import com.aryan.stumps11.R;
 import com.aryan.stumps11.Signup.MobileNumber;
 import com.aryan.stumps11.Wallet.Wallet;
 import com.aryan.stumps11.api_integration.CheckConnection;
+import com.aryan.stumps11.joinContext.JoinContextResponse;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.button.MaterialButton;
 
@@ -54,6 +56,8 @@ import java.util.Map;
 
 import static android.content.Context.MODE_PRIVATE;
 
+import static com.aryan.stumps11.HomePageClick.HomePageClick.userId;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -62,7 +66,7 @@ public class ContestAdapter extends RecyclerView.Adapter<ContestAdapter.ViewHold
     Context cc;
     List<ContextData> list;
     private String entryFess;
-
+    private List<MyTeamDummyModel> models;
     private CreateReqData createReqData;
     private   List<CreateReqData> createReqData1;
     private String ppts;
@@ -73,6 +77,7 @@ public class ContestAdapter extends RecyclerView.Adapter<ContestAdapter.ViewHold
     private String walletBalance;
     private String match_id;
     private int balance;
+    private String id;
 
     public ContestAdapter(Context cc, List<ContextData> list) {
         this.cc = cc;
@@ -102,15 +107,14 @@ public class ContestAdapter extends RecyclerView.Adapter<ContestAdapter.ViewHold
 
         String _id= mm.getId();
 
+        id =userId;
+//        models=new ArrayList<>();
+//        MyTeamDummyModel myTeamDummyModel=models.get(position);
+//      String userId=  myTeamDummyModel.getUserId();
 
-//        holder.t26.setText(list.get(position).getMaxteams());
-//        holder.t25.setText(list.get(position).getBonus());
-//        holder.t27.setText(list.get(position).getPrizepool());
-//        holder.bb.setText(list.get(position).getEntry());
-//        holder.t37.setText(list.get(position).getJoined());
-//        holder.t38.setText(list.get(position).getSpotstotal());
-//        holder.t52.setText(list.get(position).getContesttype());
-//        holder.t55.setText(list.get(position).getWinpercentage());
+        SharedPreferences a = cc.getSharedPreferences("_ID", Context.MODE_PRIVATE);
+
+        String  key  = a.getString("ID",null);//second parameter default value.
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,13 +122,13 @@ public class ContestAdapter extends RecyclerView.Adapter<ContestAdapter.ViewHold
 
                 Intent intent=new Intent(cc,ContestClick.class);
                 intent.putExtra(CommonData.TEAM_ID,mm.getId());
+
                 cc.startActivity(intent);
 
            //     cc.startActivity(new Intent(cc, ContestClick.class));
                 ((AppCompatActivity)cc).finish();
             }
         });
-
 
         holder.bb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,14 +138,10 @@ public class ContestAdapter extends RecyclerView.Adapter<ContestAdapter.ViewHold
                 bottomSheetDialog.show();
                 TextView tvEntryFee=bottomSheetDialog.findViewById(R.id.custom_join_dialog_entry_fees);
                 TextView tvWalletBalance=bottomSheetDialog.findViewById(R.id.custom_join_dialog_wallet_balance);
-
                 tvEntryFee.setText("₹ "+entryFess);
-
-
                 SharedPreferences preferences = cc.getSharedPreferences("MY_APP", Context.MODE_PRIVATE);
                 String retrivedToken  = preferences.getString("TOKEN",null);//second parameter default value.
                 String tokenName="Bearer "+retrivedToken;
-// wallet balance
                 CheckConnection.api.getWalletBalance(tokenName).enqueue(new Callback<WalletResponse>() {
                     @Override
                     public void onResponse(Call<WalletResponse> call, retrofit2.Response<WalletResponse> response) {
@@ -149,18 +149,13 @@ public class ContestAdapter extends RecyclerView.Adapter<ContestAdapter.ViewHold
                              balance=response.body().getData().getWallet();
 //                    Toast.makeText(Wallet.this,"Balance : "+response.body().getData().getWallet(),Toast.LENGTH_SHORT).show();
                             tvWalletBalance.setText(String.valueOf("₹ "+balance));
-                           // walletBalance=String.valueOf(balance);
-
                         }else{
                             Toast.makeText(cc,"ERR : ",Toast.LENGTH_SHORT).show();
-
                         }
                     }
-
                     @Override
                     public void onFailure(Call<WalletResponse> call, Throwable t) {
                         Toast.makeText(cc,"on Failure : "+t.getMessage(),Toast.LENGTH_SHORT).show();
-
                     }
                 });
 
@@ -180,22 +175,15 @@ public class ContestAdapter extends RecyclerView.Adapter<ContestAdapter.ViewHold
                             //----------------------------
 
                             match_id=Matchid;
-
-                            CreateTeamReq createTeamReq=new CreateTeamReq();
-                            createTeamReq.setTeamId(match_id);
-                            createTeamReq.setPlayer11(createReqData1);
-
-
-
                             try {
-                                CheckConnection.api.createTeamPlayer11(tokenName,createTeamReq).enqueue(new Callback<CreateTeamResponse>() {
+                                CheckConnection.api.joinContext(tokenName,"62383ff7082eb0d6e9dfbb4b", String.valueOf(mm.getEntryPrice())).enqueue(new Callback<JoinContextResponse>() {
                                     @Override
-                                    public void onResponse(Call<CreateTeamResponse> call, Response<CreateTeamResponse> response) {
+                                    public void onResponse(Call<JoinContextResponse> call, Response<JoinContextResponse> response) {
                                         if (response.isSuccessful()){
                                             cc.startActivity(new Intent(cc, HomePageClick.class));
 //                                        finish();
 //                db.removeOldId();
-                                            Toast.makeText(cc, " "+response.body().getPayload(), Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(cc, " "+response.body().getMessage(), Toast.LENGTH_SHORT).show();
                                         }else if(response.code()==500){
                                             Toast.makeText(cc, "Server Error 500"+response.errorBody().toString(), Toast.LENGTH_SHORT).show();
                                         }else{
@@ -204,7 +192,7 @@ public class ContestAdapter extends RecyclerView.Adapter<ContestAdapter.ViewHold
                                     }
 
                                     @Override
-                                    public void onFailure(Call<CreateTeamResponse> call, Throwable t) {
+                                    public void onFailure(Call<JoinContextResponse> call, Throwable t) {
                                         Toast.makeText(cc, "onFailure "+t.getMessage(), Toast.LENGTH_SHORT).show();
 
                                     }

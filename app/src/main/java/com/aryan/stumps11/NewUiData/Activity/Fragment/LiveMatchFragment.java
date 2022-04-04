@@ -83,7 +83,7 @@ public class LiveMatchFragment extends Fragment {
 //        upcomingMatchesList.clear();
 //
         progressDialog=new ProgressDialog(getContext());
-        progressDialog.setTitle("Stump11");
+        progressDialog.setTitle("Stumps11");
         progressDialog.setMessage("Loading...");
         progressDialog.show();
             SharedPreferences preferences = getContext().getSharedPreferences("MY_APP", Context.MODE_PRIVATE);
@@ -96,7 +96,7 @@ public class LiveMatchFragment extends Fragment {
 //
                 upcomingMatchesList=new ArrayList<>();
                 rq = Volley.newRequestQueue(getContext());
-                String connection= CheckConnection.BASE_URL+"/api/user/team/temp/details/622af9eac3877f3cd7980ae3";
+                String connection= CheckConnection.BASE_URL+"/api/user/team/live";
                 StringRequest stringRequest = new StringRequest(Request.Method.GET, connection, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

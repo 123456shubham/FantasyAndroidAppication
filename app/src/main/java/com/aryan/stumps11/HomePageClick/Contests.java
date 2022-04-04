@@ -1,6 +1,7 @@
 package com.aryan.stumps11.HomePageClick;
 
 import static com.aryan.stumps11.HomePageClick.HomePageClick.Match_id;
+import static com.aryan.stumps11.HomePageClick.HomePageClick.userId;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -54,6 +55,7 @@ public class Contests extends Fragment  {
     private ContestAdapter contestAdapter;
     private ImageView imgNoContext;
     private ProgressDialog progressDialog;
+    private String id;
 
 
     public Contests() {
@@ -71,6 +73,7 @@ public class Contests extends Fragment  {
         progressDialog=new ProgressDialog(getContext());
 
         Matchid=Match_id;
+        id=userId;
 
         if (Matchid!=null){
 

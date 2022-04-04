@@ -7,7 +7,6 @@ public class CommonData {
     public static String TEAM_ID="team_id";
     public  static String CREDIT_POINT="creditPoint";
     public static String playerName="PlayerName";
-
-
+    public static String userId="userId";
 
 }

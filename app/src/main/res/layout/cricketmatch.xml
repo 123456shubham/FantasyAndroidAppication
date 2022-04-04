@@ -36,7 +36,7 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/cricket_match_team_a_icon"
                 android:layout_width="50dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:src="@drawable/image"
                 app:civ_border_width="1dp" />

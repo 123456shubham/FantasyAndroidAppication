@@ -65,6 +65,7 @@ private boolean isVerifyAccount=false;
 private TextView tvWalletBouns;
 private TextView tvAddCouns;
 private TextView tvWinning;
+private ImageView imgNoTrans;
 
 
     @Override
@@ -83,6 +84,7 @@ private TextView tvWinning;
         tv_wallet_added_cash=findViewById(R.id.wallet_added_cash);
         tvWalletBouns=findViewById(R.id.wallet_bonus);
         tvWinning=findViewById(R.id.wallet_winning);
+        imgNoTrans=findViewById(R.id.wallet_no_trans);
 
 //        transactionModels=new ArrayList<>();
 
@@ -311,11 +313,17 @@ private TextView tvWinning;
                     if (response.isSuccessful()){
 
                         transactionModels=response.body().getTransactionData();
-                        for(int i=0; i<transactionModels.size(); i++){
-                            transactionAdapter=new TransactionAdapter(transactionModels,Wallet.this);
-                            tractionRecyclerview.setAdapter(transactionAdapter);
-                            transactionAdapter.notifyDataSetChanged();
+
+                        if (transactionModels.equals("0") || transactionModels.size()==0){
+                            imgNoTrans.setVisibility(View.VISIBLE);
+                        }else{
+                            for(int i=0; i<transactionModels.size(); i++){
+                                transactionAdapter=new TransactionAdapter(transactionModels,Wallet.this);
+                                tractionRecyclerview.setAdapter(transactionAdapter);
+                                transactionAdapter.notifyDataSetChanged();
+                            }
                         }
+
 
                     }else{
                         Toast.makeText(Wallet.this,"Error :-",Toast.LENGTH_SHORT).show();

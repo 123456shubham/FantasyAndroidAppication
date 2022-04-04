@@ -107,7 +107,7 @@ public class CompleteMatchFragment extends Fragment {
 //
             upcomingMatchesList=new ArrayList<>();
             rq = Volley.newRequestQueue(getContext());
-            String connection=CheckConnection.BASE_URL+"/api/user/team/temp/details/622af9eac3877f3cd7980ae3";
+            String connection= CheckConnection.BASE_URL+"/api/user/team/end";
             StringRequest stringRequest = new StringRequest(Request.Method.GET, connection, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
