@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:padding="8dp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+
+            android:id="@+id/tv_playerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Fall Of Wickets"
+            android:textColor="@color/gray"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/tv_secondTeamScore"
+            android:textSize="12dp"
+            android:layout_toLeftOf="@+id/tv_secondTeamOverNo"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Score"
+            android:gravity="center"
+            android:textColor="@color/gray"
+            />
+        <TextView
+            android:id="@+id/tv_secondTeamOverNo"
+            android:textSize="12dp"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="Over"
+            android:layout_alignParentEnd="true"
+             />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:background="@color/bg_gray"
+        android:layout_marginTop="4dp"/>
+
+</LinearLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".More.FantasyPointsSystem">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/Color1"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_marginLeft="50dp"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/amiko_bold"
+            android:layout_height="match_parent"
+            android:text="Fantasy Points System" />
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:id="@+id/tablayout"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="00dp"
+        android:layout_marginRight="00dp"
+        app:tabSelectedTextColor="@color/Color1"
+        app:tabIndicatorColor="@color/Color1"
+        android:background="@color/white"
+        android:layout_height="50dp"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_marginTop="105dp"
+        android:id="@+id/viewpager"
+        android:layout_marginBottom="00dp"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

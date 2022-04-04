@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="5dp"
+        android:layout_height="150dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+
+            <TextView
+                android:id="@+id/context_league_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/archivo_black"
+                android:gravity="center"
+                android:text="Grand League"
+                android:textColor="@color/Color1"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/textView53"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/Color5"
+                android:textSize="10dp"
+                android:fontFamily="@font/archivo_black"
+                android:layout_height="match_parent"
+                android:text="Entry Fees" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_height="30dp">
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/Color1"
+                android:textSize="10dp"
+                android:fontFamily="@font/amiko_bold"
+                android:layout_height="match_parent"
+                android:text="Max 15 Entries" />
+
+            <TextView
+                android:id="@+id/textView55"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_centerInParent="true"
+                android:textColor="@color/Color6"
+                android:textSize="10dp"
+                android:fontFamily="@font/archivo_black"
+                android:layout_height="match_parent"
+                android:text="100% Winners" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/Color5"
+                android:textSize="10dp"
+                android:fontFamily="@font/work_sans_semibold"
+                android:layout_height="match_parent"
+                android:text="Bonus 10%" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="32dp"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/context_wining_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/amiko_bold"
+                android:text="context"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/EntryButton"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/Color5"
+                android:fontFamily="@font/amiko_bold"
+                android:text="Rs 49"
+                android:textSize="11dp"
+                app:cornerRadius="5dp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_marginTop="45dp"
+                android:progressTint="@color/Color1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:progress="100"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/contest_joined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/aldrich"
+                android:text="425 Joined"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/context_spots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/aldrich"
+                android:text="918 Spots"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

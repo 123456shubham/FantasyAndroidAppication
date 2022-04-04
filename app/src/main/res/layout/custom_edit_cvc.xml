@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <ImageView
+            android:id="@+id/imageView22"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@drawable/player" />
+
+        <TextView
+            android:id="@+id/edit_cvc_name"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/arbutus_slab"
+            android:maxLines="1"
+            android:text="J. Sarwar"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#33000000" />
+
+        <TextView
+            android:id="@+id/edit_cvc_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="100dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/amiko"
+            android:text="WK | NAM"
+            android:textAllCaps="true"
+            android:textColor="#00689A"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/edit_cvc_points"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="230dp"
+            android:fontFamily="@font/amiko"
+            android:gravity="center"
+            android:text="8089"
+            android:textColor="@color/black" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="3dp"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/edit_Captain"
+                style="@style/Customchips"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:text="C"
+                android:textAppearance="@style/Customchips"
+                app:chipStrokeColor="#80000000"
+                app:chipStrokeWidth="1dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/edit_ViceCaptain"
+                style="@style/Customchips"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="V"
+                android:textAppearance="@style/Customchips"
+                app:chipStrokeColor="#80000000"
+                app:chipStrokeWidth="1dp" />
+        </com.google.android.material.chip.ChipGroup>
+    </RelativeLayout>
+
+
+</RelativeLayout>

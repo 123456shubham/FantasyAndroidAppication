@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Signup.MobileNumber">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="100dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/logo" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:gravity="center"
+        android:textSize="17dp"
+        android:textColor="@color/Color1"
+        android:fontFamily="@font/amiko_bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SignUp and Get 5000 Rs Intant!" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/image" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/Contact_Number1"
+            app:prefixText="+91 "
+            android:layout_marginTop="165dp"
+            android:background="@color/white"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:id="@+id/Contact_Number"
+                android:maxLength="10"
+                android:inputType="number"
+                android:digits="1234567890"
+                android:layout_height="wrap_content"
+                android:hint="Enter Your Mobile Number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/Continue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="240dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/suez_one"
+            android:text="Continue"
+            app:backgroundTint="#007803"
+            app:cornerRadius="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:id="@+id/Terms"
+            android:fontFamily="@font/basic"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
+            android:text="By Proceeding , I agree with Stumps11's T&amp;C" />
+
+    </RelativeLayout>
+
+</LinearLayout>

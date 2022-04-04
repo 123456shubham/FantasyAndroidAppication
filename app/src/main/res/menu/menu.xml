@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/HomePage"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/MyMatches"
+        android:icon="@drawable/ic_baseline_emoji_events_24"
+        android:title="My Matches"/>
+
+    <item
+        android:id="@+id/Winners"
+        android:icon="@drawable/ic_baseline_star_24"
+        android:title="Winners"/>
+
+    <item
+        android:id="@+id/More"
+        android:icon="@drawable/ic_baseline_more_vert_24"
+        android:title="More"/>
+
+</menu>

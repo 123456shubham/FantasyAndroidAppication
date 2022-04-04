@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:tint="@color/Color1"
+            app:srcCompat="@drawable/ic_baseline_location_on_24" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="70dp"
+            android:fontFamily="@font/amiko_bold"
+            android:layout_height="wrap_content"
+            android:text="Sorry Your State is Restricted !" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="105dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#B3000000"
+            android:fontFamily="@font/basic"
+            android:layout_height="wrap_content"
+            android:text="Restricted States : Andhra Pradesh, Assam, Karnataka, Nagaland, Odisha, Sikkim and Telangana." />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:text="Close Stumps11!"
+            android:id="@+id/Close"
+            android:textColor="@color/white"
+            android:fontFamily="@font/amiko_bold"
+            app:backgroundTint="@color/Color1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:cornerRadius="20dp"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+</RelativeLayout>

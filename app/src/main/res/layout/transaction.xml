@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="60dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="120dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView62"
+                android:textColor="@color/black"
+                android:fontFamily="@font/arbutus_slab"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transaction ID : 45698872" />
+
+            <TextView
+                android:id="@+id/textView63"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/arbutus_slab"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date : 24/12/2021 15:30:32" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView60"
+            android:textColor="@color/Color1"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:fontFamily="@font/arbutus_slab"
+            android:layout_height="match_parent"
+            android:text="-50000" />
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

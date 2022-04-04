@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.aryan.stumps11"
+    android:versionCode="1"
+    android:versionName="1.0"
+    tools:ignore="CoarseFineLocation">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        tools:ignore="CoarseFineLocation" />
+    <uses-permission
+        android:name="android.permission.CAMERA"
+        android:required="true"
+        android:requiredFeature="true" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Stumps11"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name=".EditTeam.EditCVCActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditTeam.EditTeamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.LiveMatchAcivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewUiData.Activity.MatchDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewUiData.Activity.MymatchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.ContestCodeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.PrivateContestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.VerifiedBankAccountDetails"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.BankAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Wallet.webViewPage.AddMoneyWebViewActivity"
+            android:exported="false" />
+        <activity android:name=".CreateTeam.GreenBackground" />
+        <activity android:name=".CreateTeam.ChooseCaptainandVC" />
+        <activity android:name=".CreateTeam.CreateTeams" />
+        <activity android:name=".MyMatchesClick.MyMatchesClickEvent" />
+        <activity android:name=".ContestClick.ContestClick" />
+        <activity android:name=".HomePageClick.HomePageClick" />
+        <activity android:name=".Wallet.Wallet" />
+        <activity android:name=".MyMatches.MyMatches" />
+        <activity android:name=".Winners.WinnersActivity" />
+        <activity android:name=".More.MoreActivity" />
+        <activity android:name=".More.Legality" />
+        <activity android:name=".More.Privacy" />
+        <activity android:name=".More.HowToPlay" />
+        <activity android:name=".More.AboutUs" />
+        <activity android:name=".More.FantasyPointsSystem" />
+        <activity android:name=".More.ReferandEarn" />
+        <activity android:name=".More.KYC" />
+        <activity android:name=".More.RecentTransactions" />
+        <activity
+            android:name=".More.Profile"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".More.TermsandConditions" />
+        <activity android:name=".Signup.MobileNumber" />
+        <activity android:name=".Home.HomePage" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.NewUserUpdateProfile" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#970000</color>
+    <color name="purple_500">#970000</color>
+    <color name="purple_700">#970000</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="Color1">#B80202</color>
+    <color name="red">#B80202</color>
+    <color name="Color2">#0D000000</color>
+    <color name="Color3">#80000000</color>
+    <color name="gray">#80000000</color>
+    <color name="Color4">#1AB80202</color>
+    <color name="Color5">#00B504</color>
+    <color name="Color6">#FB8C00</color>
+    <color name="Color7">#33FF0000</color>
+    <color name="PlayerSelected">#1AFF0000</color>
+
+    <color name="bg_gray">#f2f2f2</color>
+    <color name="purpal"> #ac8738</color>
+
+    <color name="light_purpale">#3cb890</color>
+
+
+</resources>

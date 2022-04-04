@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_marginLeft="2dp"
+        android:layout_width="match_parent"
+        android:padding="8dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_BowlerName"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:maxLines="1"
+            android:text="BowlerName"
+            android:textSize="12dp" />
+
+
+        <TextView
+            android:id="@+id/tv_bowlerOver"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_BowlerName"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="O"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/tv_maidenOver"
+            android:maxLines="1"
+            android:layout_toRightOf="@+id/tv_bowlerOver"
+            android:layout_width="40dp"
+            android:gravity="center"
+            android:textSize="12dp"
+            android:layout_height="wrap_content"
+            android:text="M"/>
+        <TextView
+            android:id="@+id/tv_totalRun"
+            android:maxLines="1"
+            android:textSize="12dp"
+            android:layout_toRightOf="@+id/tv_maidenOver"
+            android:layout_width="40dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="R"/>
+        <TextView
+            android:id="@+id/tv_totalWickets"
+            android:maxLines="1"
+            android:textSize="12dp"
+            android:layout_toRightOf="@+id/tv_totalRun"
+            android:layout_width="40dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="W"/>
+        <TextView
+            android:textSize="12dp"
+            android:id="@+id/tv_overRunRate"
+            android:maxLines="1"
+            android:layout_toRightOf="@+id/tv_totalWickets"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="ORR"/>
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/bg_gray"/>
+</LinearLayout>

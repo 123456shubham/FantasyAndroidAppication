@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1086284769383",
+    "project_id": "stumps11-a4b90",
+    "storage_bucket": "stumps11-a4b90.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1086284769383:android:043e5b04a963013030ccc2",
+        "android_client_info": {
+          "package_name": "com.aryan.stumps11"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1086284769383-nraib9ncsnbkl2tftdilfggtif7itod4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKmGiN-ECKQOENK9uNq-86EecIuYHParA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1086284769383-nraib9ncsnbkl2tftdilfggtif7itod4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

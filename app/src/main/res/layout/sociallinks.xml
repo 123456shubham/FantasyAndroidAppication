@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <TextView
+            android:id="@+id/textView67"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_marginBottom="13dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/amiko_bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Our Social Links : " />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/insta"
+            android:background="@drawable/borderbackground"
+            android:layout_marginRight="010dp"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/insta" />
+
+            <TextView
+                android:id="@+id/textView77"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:fontFamily="@font/amiko_bold"
+                android:textColor="@color/black"
+                android:layout_height="match_parent"
+                android:text="Follow Us On Instagram" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:backgroundTint="#0048FF"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Follow Us On Facebook"
+            android:id="@+id/fb"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/amiko_bold"
+            android:drawableLeft="@drawable/ic_baseline_facebook_24"
+            android:drawableTint="@color/white"
+            app:cornerRadius="0dp"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:backgroundTint="#1E88E5"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/telegram"
+            android:layout_marginRight="10dp"
+            android:text="Join Our Telegram Group"
+            app:cornerRadius="0dp"
+            android:textColor="@color/white"
+            android:drawableTint="@color/white"
+            android:drawableLeft="@drawable/ic_baseline_telegram_24"
+            android:fontFamily="@font/amiko_bold"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

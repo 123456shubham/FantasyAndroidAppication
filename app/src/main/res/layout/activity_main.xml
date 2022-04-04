@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="25dp"
+        android:layout_height="120dp">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/logo" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:layout_marginTop="150dp"
+        android:textColor="@color/Color1"
+        android:fontFamily="@font/amiko_bold"
+        android:layout_height="wrap_content"
+        android:text="Stumps 11!" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:layout_marginTop="190dp"
+        android:textColor="@color/Color1"
+        android:fontFamily="@font/basic"
+        android:layout_height="wrap_content"
+        android:text="India Ka Apna Trusted Fantasy Cricket App." />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="400dp">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/image" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

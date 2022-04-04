@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="20dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/call"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="#FB8C00"
+            android:drawableLeft="@drawable/ic_baseline_call_24"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/amiko_bold"
+            android:text="+91 9599734137"
+            android:textColor="@color/white"
+            app:cornerRadius="5dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/Color1"
+            android:drawableLeft="@drawable/ic_baseline_mail_outline_24"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/amiko_bold"
+            android:text="Stumps11thegame@gmail.com"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            app:cornerRadius="5dp" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/amiko_bold"
+            android:gravity="center"
+            android:text="Contact with Stumps11!"
+            android:textColor="@color/black"
+            android:textSize="17dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:fontFamily="@font/basic"
+            android:gravity="center"
+            android:text="Call support timings are from 10am-5pm"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="145dp"
+            android:fontFamily="@font/basic"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Beware of fraudulent calls-Stumps11! will never call you asking for your bank/card details or OTP."
+            android:textColor="@color/black" />
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

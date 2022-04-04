@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="00dp"
+        android:layout_marginRight="00dp"
+        android:layout_height="230dp">
+
+        <TextView
+            android:id="@+id/textView58"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/Color1"
+            android:fontFamily="@font/amiko_bold"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            android:text="How Refer &amp; Earn Works?" />
+
+        <TextView
+            android:id="@+id/textView59"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:textSize="12dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/arbutus_slab"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:text="1. Share Your Referral Code With Your Friends and Family Members. \n\n2. If They Download the App and Use Your Referral Code You Get 1000 Rs Instant and Your Friend Gets 600 Rs Instant as Cash Bonus." />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:id="@+id/ok"
+            android:textColor="@color/white"
+            android:layout_marginLeft="010dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/Color1"
+            app:cornerRadius="20dp"
+            android:text="OKAY"
+            android:fontFamily="@font/amiko_bold"
+            android:layout_height="wrap_content">
+
+
+        </com.google.android.material.button.MaterialButton>
+    </LinearLayout>
+
+</RelativeLayout>

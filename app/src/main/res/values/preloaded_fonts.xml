@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/</item>
+        <item>@font/adamina</item>
+        <item>@font/aldrich</item>
+        <item>@font/alegreya_sans_sc_medium</item>
+        <item>@font/amiko</item>
+        <item>@font/amiko_bold</item>
+        <item>@font/arbutus_slab</item>
+        <item>@font/archivo_black</item>
+        <item>@font/basic</item>
+        <item>@font/suez_one</item>
+        <item>@font/work_sans_semibold</item>
+    </array>
+</resources>

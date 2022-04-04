@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/black"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="170dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="200dp">
+
+        <TextView
+            android:id="@+id/textView17"
+            android:textColor="@color/black"
+            android:gravity="center|bottom"
+            android:drawableLeft="@drawable/ic_baseline_celebration_24"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:drawableTint="#FB8C00"
+            android:fontFamily="@font/amiko_bold"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="Won 19 Lakh" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="40dp"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/Winnerimage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="00dp"
+                android:layout_marginBottom="40dp"
+                android:src="@drawable/logo" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiko_bold"
+                android:layout_height="wrap_content"
+                android:text="POGOU9978QWE" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:background="@color/Color1"
+            android:gravity="center"
+            android:layout_height="30dp">
+
+            <TextView
+                android:id="@+id/textView16"
+                android:textColor="@color/white"
+                android:fontFamily="@font/amiko_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jharkhand" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

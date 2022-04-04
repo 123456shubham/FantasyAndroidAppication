@@ -1,0 +1,1068 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/Color2"
+    android:layout_height="match_parent"
+    tools:context=".More.ODI">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/Color1"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/amiko_bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Normal" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="In Starting 11" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="4" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Run" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="1" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Wicket (Excluding Run Out)" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="25" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Catch" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="8" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Stumping" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="12" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Run Out (Thrower/Catcher)" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="6/6" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Run Out (Direct Hit)" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="12" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="50dp">
+
+
+                    <TextView
+                        android:gravity="left|center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="12dp"
+                        android:layout_height="match_parent"
+                        android:text="Dismissal For a Duck\n(Batsmen, Wicket-Keeper &amp; All Rounder)" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/Color1"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="-2" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/Color1"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/amiko_bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Bonus" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Boundary Bonus" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="1" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Six Bonus" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="2" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Half-Century Bonus" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="16" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Maiden Over" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="16" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="3 Catch Bonus" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="4" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="2 Wicket Bonus" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="8" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="50dp">
+
+
+                    <TextView
+                        android:gravity="left|center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="12dp"
+                        android:layout_height="match_parent"
+                        android:text="3 Wicket Bonus" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="16" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/white"
+                    android:layout_height="50dp">
+
+
+                    <TextView
+                        android:gravity="left|center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="12dp"
+                        android:layout_height="match_parent"
+                        android:text="Bonus (LBW / Bowled)" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="8" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/white"
+                    android:layout_height="50dp">
+
+
+                    <TextView
+                        android:gravity="left|center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="12dp"
+                        android:layout_height="match_parent"
+                        android:text="30 runs scored by a batsman in a single innings" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="8" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/white"
+                    android:layout_height="50dp">
+
+
+                    <TextView
+                        android:gravity="left|center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="12dp"
+                        android:layout_height="match_parent"
+                        android:text="50 runs scored by a batsman in a single innings" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="16" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/Color1"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/amiko_bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Economy Rate" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="50dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="12dp"
+                        android:layout_height="match_parent"
+                        android:text="Minimum overs bowled by \nplayer to be applicable" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="1 Over" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Below 7 Runs per over" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="6" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Between 7-7.99 runs per over" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="4" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Between 8-9 runs per over" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="2" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Between 14-15 runs per over" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/Color1"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="-2" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Between 15.01-16 runs per over" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/Color1"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="-4" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Above 16 runs per over" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/Color1"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="-6" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/Color1"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/amiko_bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Strike Rate (except Bowlers)" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:textSize="12dp"
+                        android:text="Minimum balls faced by a \nplayer to be applicable" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="5 balls" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Over 190 runs per 100 balls" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="6" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Between 170.01 and 190 runs per 100 balls" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="4" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Between 150 and 170 runs per 100 balls" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="2" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Between 70 and 80 runs per 100 balls" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/Color1"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="-2" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Between 60 and 69.99 runs per 100 balls" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/Color1"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="-4" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:layout_height="40dp">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="Below 60 runs per 100 balls" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:textColor="@color/Color1"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/arbutus_slab"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent"
+                        android:text="-6" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</LinearLayout>
