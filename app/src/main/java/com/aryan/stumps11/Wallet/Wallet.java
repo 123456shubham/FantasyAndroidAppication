@@ -231,8 +231,6 @@ private ImageView imgNoTrans;
                     int addCash=response.body().getData().getAddCash();
 
 
-
-
 //                    Toast.makeText(Wallet.this,"Balance : "+response.body().getData().getWallet(),Toast.LENGTH_SHORT).show();
                     tvBalance.setText(String.valueOf("₹ "+balance));
                     tvWalletBouns.setText(String.valueOf("₹ "+addBouns));
@@ -314,7 +312,7 @@ private ImageView imgNoTrans;
 
                         transactionModels=response.body().getTransactionData();
 
-                        if (transactionModels.equals("0") || transactionModels.size()==0){
+                        if (transactionModels.equals("0") || transactionModels.size()==0 || transactionModels.isEmpty()){
                             imgNoTrans.setVisibility(View.VISIBLE);
                         }else{
                             for(int i=0; i<transactionModels.size(); i++){

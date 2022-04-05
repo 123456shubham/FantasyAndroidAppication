@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardElevation="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:background="#008503"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="end"
+                android:layout_gravity="end"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/custom_join_team_id"
+                    android:layout_weight="1"
+                    android:text="My Team Id : 12345567"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:background="@drawable/custom_button"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/custom_join_team_selected_team"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:text="Join Context"
+                    android:textColor="#000"
+                    android:gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"/>
+
+<!--                <ImageView-->
+<!--                    android:layout_marginLeft="100dp"-->
+<!--                    android:layout_gravity="end"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:src="@drawable/ic_baseline_edit_24"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="#008503"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+                <!--                <LinearLayout-->
+                <!--                    android:layout_weight="1"-->
+                <!--                    android:orientation="vertical"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content">-->
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/custom_my_team_a_name"-->
+                <!--                        android:text="HBSC"-->
+                <!--                        android:gravity="center"-->
+                <!--                        android:layout_gravity="center"-->
+                <!--                        android:textColor="@color/white"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"/>-->
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/custom_my_team_a_total_number_player"-->
+                <!--                        android:text="6"-->
+                <!--                        android:textSize="30dp"-->
+                <!--                        android:gravity="center"-->
+                <!--                        android:layout_gravity="center"-->
+                <!--                        android:textColor="@color/white"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"/>-->
+                <!--                </LinearLayout>-->
+
+                <!--                <LinearLayout-->
+                <!--                    android:layout_weight="1"-->
+                <!--                    android:orientation="vertical"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content">-->
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/custom_my_team_b_name"-->
+                <!--                        android:text="HBSC"-->
+                <!--                        android:gravity="center"-->
+                <!--                        android:textColor="@color/white"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"/>-->
+                <!--                    <TextView-->
+                <!--                        android:text="6"-->
+                <!--                        android:gravity="center"-->
+                <!--                        android:textSize="30dp"-->
+                <!--                        android:id="@+id/custom_my_team_b_total_player"-->
+                <!--                        android:textColor="@color/white"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"/>-->
+                <!--                </LinearLayout>-->
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textColor="@color/white"
+                        android:text="C"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/custom_my_team_c_player"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_baseline_supervised_user_circle_24"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"/>
+                        <TextView
+                            android:id="@+id/custom_join_team_c_name"
+                            android:textColor="@color/white"
+                            android:text="Capatain Name"
+                            android:textSize="10dp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textColor="@color/white"
+                        android:text="VC"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_marginLeft="-20dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/custom_my_team_vc_player"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_baseline_supervised_user_circle_24"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"/>
+                        <TextView
+                            android:id="@+id/custom_join_team_vc_name"
+                            android:textSize="10dp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:text="Capatain Name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:padding="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/custom_join_team_tt_wk"
+                    android:text="Wk 3"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/custom_join_team_tt_bat"
+                    android:text="Bat 3"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/custom_join_team_tt_all"
+                    android:text="All 3"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/custom_join_team_tt_bowl"
+                    android:text="Bowl 12"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

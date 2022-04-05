@@ -44,6 +44,7 @@ import com.aryan.stumps11.comingMatch.ComingSoonDetails;
 import com.aryan.stumps11.comingMatch.CommingSoonResponse;
 import com.aryan.stumps11.comingMatch.Item;
 import com.aryan.stumps11.joinContext.JoinContextResponse;
+import com.aryan.stumps11.joinContextList.JoinContextListRes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -165,11 +166,11 @@ public interface API_INTERFACE {
     Call<LeaderBoardResponse> getLeaderBoard(@Header("Authorization") String token, @Path("match_id") String match);
 
     //27) add player 11
-    @PUT("api/user/team/temp/update/{user_Id}")
+    @PUT("/api/user/team/temp/update/{user_Id}")
     Call<DummyResponse> addPlayer11(@Header("Authorization") String token, @Body CreateTeamReq createTeamReq);
 
     // 28) my match up coming
-    @GET("api/user/team/{status}")
+    @GET("/api/user/my-team/{status}")
     Call<MyDummyTeamRes> getMatch(@Header("Authorization" )String token);
 
     // 29) my match live
@@ -177,7 +178,12 @@ public interface API_INTERFACE {
     // 30) my completed
 
     // 31) pay context
-    @GET("api/user/create/team/{user_id}/{price}")
+    @GET("/api/user/create/team/{user_id}/{price}")
     Call<JoinContextResponse> joinContext(@Header("Authorization") String token,@Path("user_id") String id , @Path("price") String money);
+
+
+    // 32) list join context
+    @GET("/api/user/team/list-view")
+    Call<JoinContextListRes> joinContextList(@Header("Authorization") String token);
 
 }

@@ -21,6 +21,7 @@ import com.aryan.stumps11.Adapters.TabAdapter;
 import com.aryan.stumps11.CreateTeam.CreateTeamAdapter;
 import com.aryan.stumps11.CreateTeam.CreateTeams;
 import com.aryan.stumps11.CreateTeam.DataBase;
+import com.aryan.stumps11.CreateTeam.SelectedData;
 import com.aryan.stumps11.Extra.CommonData;
 import com.aryan.stumps11.Home.HomePage;
 import com.aryan.stumps11.R;
@@ -62,9 +63,12 @@ public class HomePageClick extends AppCompatActivity  {
         teamNameB=getIntent().getStringExtra("TeamNameB");
         team1=getIntent().getStringExtra("teamImage1");
         team2=getIntent().getStringExtra("teamImage2");
+        //team=teamNameA+" Vs "+teamNameB;
         team=teamNameA+" Vs "+teamNameB;
-        teamTiming=getIntent().getStringExtra("time");
-        tvTeamName.setText(team);
+        String hd=SelectedData.teamsheader;
+//        teamTiming=getIntent().getStringExtra("time");
+        tvTeamName.setText(hd);
+        String teamTiming=SelectedData.headTime;
         try{
             DateTimeFormatter dtf = null;
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
@@ -220,14 +224,14 @@ public class HomePageClick extends AppCompatActivity  {
 
     @Override
     public void onBackPressed() {
-        teamNameA=getIntent().getStringExtra("TeamNameA");
-        teamNameB=getIntent().getStringExtra("TeamNameB");
-        team1=getIntent().getStringExtra("teamImage1");
-        team2=getIntent().getStringExtra("teamImage2");
-        team=teamNameA+" Vs "+teamNameB;
-        teamTiming=getIntent().getStringExtra("time");
-        tvTeamTime.setText(teamTiming);
-        tvTeamName.setText(team);
+//        teamNameA=getIntent().getStringExtra("TeamNameA");
+//        teamNameB=getIntent().getStringExtra("TeamNameB");
+//        team1=getIntent().getStringExtra("teamImage1");
+//        team2=getIntent().getStringExtra("teamImage2");
+//        team=teamNameA+" Vs "+teamNameB;
+//        teamTiming=getIntent().getStringExtra("time");
+//        tvTeamTime.setText(teamTiming);
+//        tvTeamName.setText(team);
         startActivity(new Intent(HomePageClick.this, HomePage.class));
         overridePendingTransition(0,0);
         finish();
@@ -236,14 +240,14 @@ public class HomePageClick extends AppCompatActivity  {
     @Override
     protected void onResume() {
         super.onResume();
-        teamNameA=getIntent().getStringExtra("TeamNameA");
-        teamNameB=getIntent().getStringExtra("TeamNameB");
-        team1=getIntent().getStringExtra("teamImage1");
-        team2=getIntent().getStringExtra("teamImage2");
-        team=teamNameA+" Vs "+teamNameB;
-        teamTiming=getIntent().getStringExtra("time");
-        tvTeamTime.setText(teamTiming);
-        tvTeamName.setText(team);
+//        teamNameA=getIntent().getStringExtra("TeamNameA");
+//        teamNameB=getIntent().getStringExtra("TeamNameB");
+//        team1=getIntent().getStringExtra("teamImage1");
+//        team2=getIntent().getStringExtra("teamImage2");
+//        team=teamNameA+" Vs "+teamNameB;
+//        teamTiming=getIntent().getStringExtra("time");
+//        tvTeamTime.setText(teamTiming);
+//        tvTeamName.setText(team);
     }
 
     @Override
@@ -251,14 +255,14 @@ public class HomePageClick extends AppCompatActivity  {
         super.onRestart();
 
 
-        teamNameA=getIntent().getStringExtra("TeamNameA");
-        teamNameB=getIntent().getStringExtra("TeamNameB");
-        team1=getIntent().getStringExtra("teamImage1");
-        team2=getIntent().getStringExtra("teamImage2");
-        team=teamNameA+" Vs "+teamNameB;
-        teamTiming=getIntent().getStringExtra("time");
-        tvTeamTime.setText(teamTiming);
-        tvTeamName.setText(team);
+//        teamNameA=getIntent().getStringExtra("TeamNameA");
+//        teamNameB=getIntent().getStringExtra("TeamNameB");
+//        team1=getIntent().getStringExtra("teamImage1");
+//        team2=getIntent().getStringExtra("teamImage2");
+//        team=teamNameA+" Vs "+teamNameB;
+//        teamTiming=getIntent().getStringExtra("time");
+//        tvTeamTime.setText(teamTiming);
+//        tvTeamName.setText(team);
 
     }
 }

@@ -191,7 +191,7 @@ public class BankAccountActivity extends AppCompatActivity {
                 public void onResponse(Call<AddBankResponse> call, Response<AddBankResponse> response) {
 
                     if (response.isSuccessful()){
-                        Toast.makeText(BankAccountActivity.this,"Sucess "+response.body().getUserBeneficiary(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BankAccountActivity.this,response.body().getUserBeneficiary(),Toast.LENGTH_SHORT).show();
                     }else if(response.code()==422){
                         Toast.makeText(BankAccountActivity.this,"Error " +response.body().getUserBeneficiary(),Toast.LENGTH_SHORT).show();
                     }else{
@@ -203,14 +203,14 @@ public class BankAccountActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<AddBankResponse> call, Throwable t) {
-                    Toast.makeText(BankAccountActivity.this,"OnFailure "+t.getMessage(),Toast.LENGTH_SHORT).show();
+                  // Toast.makeText(BankAccountActivity.this,"OnFailure "+t.getMessage(),Toast.LENGTH_SHORT).show();
 
 
                 }
             });
 
         }catch(Exception e){
-            Toast.makeText(BankAccountActivity.this,"Exception  "+e.getMessage(),Toast.LENGTH_SHORT).show();
+           // Toast.makeText(BankAccountActivity.this,"Exception  "+e.getMessage(),Toast.LENGTH_SHORT).show();
 
         }
 

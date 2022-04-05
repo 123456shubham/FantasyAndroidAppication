@@ -65,4 +65,6 @@ public class JoinedContestAdapter extends RecyclerView.Adapter<JoinedContestAdap
             t55=itemView.findViewById(R.id.textView55);
         }
     }
+
+
 }

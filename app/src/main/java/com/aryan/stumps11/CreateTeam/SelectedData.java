@@ -23,7 +23,14 @@ public class SelectedData {
     public enum Role{
         WK,BAT,BOWL,ALL
     }
-
+    public static String teamsheader="";
+    public static String headTime="";
+    public static String teamNameA="";
+    public static String teamNameB="";
+    public static String teamAImage="";
+    public static String teamBImage="";
+    public static String walletBalance="";
+    public static String joinAmount="";
     private static final HashMap<String,Boolean> map = new HashMap<>();
     private static final List<data> data = new ArrayList<>();
     private static final HashMap<String,data> captainMap = new HashMap<>();
@@ -188,7 +195,7 @@ public class SelectedData {
     public void clearData(){
         map.clear();
         data.clear();
-//        captainMap.clear();
+       captainMap.clear();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)

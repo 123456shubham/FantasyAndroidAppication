@@ -18,6 +18,18 @@ public class CreateTeamReq {
     @Expose
     private String cid;
 
+    @SerializedName("_id")
+    @Expose
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getCid() {
         return cid;
     }

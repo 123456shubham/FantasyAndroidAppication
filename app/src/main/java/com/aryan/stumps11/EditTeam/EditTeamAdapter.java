@@ -275,6 +275,7 @@ public class EditTeamAdapter extends RecyclerView.Adapter<EditTeamAdapter.ViewHo
         }
 
         SharedPreferences.Editor editor1=sp.edit();
+
         editor1.putInt("Key",SelectedData.getSelectedData().getPlayerCount());
         editor1.putInt("wKey",SelectedData.getSelectedData().getRoleCount("wk"));
         editor1.putInt("bKey",SelectedData.getSelectedData().getRoleCount("bat"));
@@ -282,15 +283,6 @@ public class EditTeamAdapter extends RecyclerView.Adapter<EditTeamAdapter.ViewHo
         editor1.putInt("bwlKey",SelectedData.getSelectedData().getRoleCount("bowl"));
         editor1.putFloat("creditPoints",SelectedData.getSelectedData().getCreditPoints());
 //      editor1.clear();
-        editor1.apply();
-
-
-
-
-        Log.e("lkjkl",SelectedData.getSelectedData().getRoleCount("wk")+"");
-
-
-
     }
 
 }

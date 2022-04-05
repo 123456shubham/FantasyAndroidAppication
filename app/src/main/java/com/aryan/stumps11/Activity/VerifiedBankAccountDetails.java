@@ -175,14 +175,11 @@ public class VerifiedBankAccountDetails extends AppCompatActivity {
             @Override
             public void onResponse(Call<WalletResponse> call, Response<WalletResponse> response) {
                 if (response.isSuccessful()){
-                     balance=response.body().getData().getWallet();
+                     balance=response.body().getData().getWinningWallet();
 
                     int addBouns=response.body().getData().getBounsWallet();
                     int addWinning=response.body().getData().getWinningWallet();
                     int addCash=response.body().getData().getAddCash();
-
-
-
 
 //                    Toast.makeText(Wallet.this,"Balance : "+response.body().getData().getWallet(),Toast.LENGTH_SHORT).show();
                     balanceTv.setText(String.valueOf("₹ "+balance));

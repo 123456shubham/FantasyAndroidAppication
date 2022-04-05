@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -83,6 +84,9 @@ public class CreateTeams extends AppCompatActivity implements SharedPreferences.
     private   List<CreateReqData> createReqData1;
     private String ppts;
     private String captainName,viceCaptain;
+    private boolean BackPlayer=true;
+
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +101,9 @@ public class CreateTeams extends AppCompatActivity implements SharedPreferences.
         tvCreateTeamName=findViewById(R.id.create_team_name);
         tvCreateTeamTime=findViewById(R.id.create_team_time);
         imgBacKBtn=findViewById(R.id.create_team_image_back_btn);
+        progressDialog=new ProgressDialog(CreateTeams.this);
+        progressDialog.setTitle("Stumps11");
+        progressDialog.setMessage("Loading...");
         createReqData1=new ArrayList<>();
 
 
@@ -109,9 +116,10 @@ public class CreateTeams extends AppCompatActivity implements SharedPreferences.
             @Override
             public void onClick(View view) {
 
-                    SelectedData.getSelectedData().clearData();
-                    startActivity(new Intent(CreateTeams.this,HomePageClick.class));
-                    finish();
+//                    SelectedData.getSelectedData().clearData();
+//                    startActivity(new Intent(CreateTeams.this,HomePageClick.class));
+//                    finish();
+                onBackPressed();
 
 
             }
@@ -145,30 +153,9 @@ public class CreateTeams extends AppCompatActivity implements SharedPreferences.
         bat=sp.getInt("bKey",0);
         all=sp.getInt("aKey",0);
         bwl=sp.getInt("bwlKey",0);
-
-///////////Change Qasim
-      /*  Log.e("kljnkj",sp.getFloat("creditPoints",0)+"");
-
-        creditPoints=sp.getFloat("creditPoints",0);
-
-
-        try{
-            creditPoints=sp.getFloat("creditPoints",0);
-
-
-            Log.e("kjhjh",creditPoints+"");
-
-        }catch (Exception e){
-            e.printStackTrace();
-
-        }*/
-
         sp.registerOnSharedPreferenceChangeListener(this);
         t80=findViewById(R.id.textView80);
-
         tvCreditPoints.setText(String.valueOf(creditPoints));
-
-
         preview=findViewById(R.id.Preview);
         bb=findViewById(R.id.Next);
         tt=findViewById(R.id.tablayout);
@@ -205,18 +192,21 @@ public class CreateTeams extends AppCompatActivity implements SharedPreferences.
                 }else {
                     Toast.makeText(CreateTeams.this, "Please select 11 player", Toast.LENGTH_SHORT).show();
                 }
-              SharedPreferences  sharedPreferences=getSharedPreferences("Counts",MODE_PRIVATE);
-              SharedPreferences.Editor s=sharedPreferences.edit();
-              s.clear();
-              s.apply();
-                SelectedData.getSelectedData().clearData();
+//              SharedPreferences  sharedPreferences=getSharedPreferences("Counts",MODE_PRIVATE);
+//              SharedPreferences.Editor s=sharedPreferences.edit();
+//              s.clear();
+//              s.apply();
+//                SelectedData.getSelectedData().clearData();
+
+                progressDialog.dismiss();
+
             }
         });
         preview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(CreateTeams.this,GreenBackground.class));
-                overridePendingTransition(0,0);
+                BackPlayer=false;  // if click onm team should come back and not clear data
             }
         });
         Conditions();
@@ -258,14 +248,15 @@ public class CreateTeams extends AppCompatActivity implements SharedPreferences.
 
     private void setTeamDetails(){
 
-        teamNameA=getIntent().getStringExtra("TeamNameA");
-        teamNameB=getIntent().getStringExtra("TeamNameB");
-        String imageTeam1=getIntent().getStringExtra("teamImage1");
-        String imageTeam2=getIntent().getStringExtra("teamImage2");
-        String time=getIntent().getStringExtra("time");
-
+        teamNameA=SelectedData.teamNameA;
+        teamNameB=SelectedData.teamNameB;
+        String imageTeam1=SelectedData.teamAImage;
+        String imageTeam2=SelectedData.teamBImage;
+        String time=SelectedData.headTime;
         tvNameB.setText(teamNameB);
         tvNameA.setText(teamNameA);
+
+
 
 
         try{
@@ -307,8 +298,8 @@ public class CreateTeams extends AppCompatActivity implements SharedPreferences.
             }.start();
 
         }catch (Exception e){
-
-            Toast.makeText(this, "Exception :- "+e, Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+          //  Toast.makeText(this, "Exception :- "+e, Toast.LENGTH_SHORT).show();
         }
         tvCreateTeamName.setText(teamNameA+" Vs "+teamNameB);
 //        tvCreateTeamTime.setText(time);
@@ -316,6 +307,8 @@ public class CreateTeams extends AppCompatActivity implements SharedPreferences.
         Glide.with(CreateTeams.this).load(imageTeam1).into(circleImageViewTeamA);
         Glide.with(CreateTeams.this).load(imageTeam2).into(circleImageViewTeamB);
 
+
+        progressDialog.dismiss();
     }
 
 
@@ -334,7 +327,7 @@ public class CreateTeams extends AppCompatActivity implements SharedPreferences.
     @Override
     public void onBackPressed() {
 
-
+        if (BackPlayer==true){
 
             SharedPreferences  sharedPreferences=getSharedPreferences("Counts",MODE_PRIVATE);
             SharedPreferences.Editor s=sharedPreferences.edit();
@@ -342,14 +335,20 @@ public class CreateTeams extends AppCompatActivity implements SharedPreferences.
             s.apply();
             clearKeys();
 
+          SelectedData.getSelectedData().clearData();
 
-        SelectedData.getSelectedData().clearData();
+//            setTeamDetails();
+            startActivity(new Intent(CreateTeams.this, HomePageClick.class));
+            CustomIntent.customType(CreateTeams.this,"right-to-left");
+            finish();
 
-        setTeamDetails();
-        startActivity(new Intent(CreateTeams.this, HomePageClick.class));
-        CustomIntent.customType(CreateTeams.this,"right-to-left");
-        finish();
+        }
+        BackPlayer=true;
+
+
     }
+
+
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
@@ -361,39 +360,24 @@ public class CreateTeams extends AppCompatActivity implements SharedPreferences.
         bwl=sharedPreferences.getInt("bwlKey",0);
         creditPoints=sharedPreferences.getFloat("creditPoints",0);
         pp.setProgress(hello*100/(11000/1000));
-
         t80.setText(""+hello+" Players Selected");
-
         tt.getTabAt(0).setText("WK"+"("+wk+")");
         tt.getTabAt(1).setText("BAT"+"("+bat+")");
         tt.getTabAt(2).setText("AR"+"("+all+")");
         tt.getTabAt(3).setText("BWL"+"("+bwl+")");
     }
 
-
-
-
-
-
-    public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            // Get extra data included in the Intent
-            String ItemName = intent.getStringExtra("c");
-            Toast.makeText(CreateTeams.this,ItemName +" khudrc" ,Toast.LENGTH_SHORT).show();
-        }
-    };
-
     @Override
     protected void onResume() {
         super.onResume();
 //
+//
+//            SharedPreferences  sharedPreferences=getSharedPreferences("Counts",MODE_PRIVATE);
+//            SharedPreferences.Editor s=sharedPreferences.edit();
+//            s.clear();
+//            s.apply();
+//            clearKeys();
 
-            SharedPreferences  sharedPreferences=getSharedPreferences("Counts",MODE_PRIVATE);
-            SharedPreferences.Editor s=sharedPreferences.edit();
-            s.clear();
-            s.apply();
-            clearKeys();
 
 
     }
@@ -415,6 +399,5 @@ public class CreateTeams extends AppCompatActivity implements SharedPreferences.
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        SelectedData.getSelectedData().clearData();
     }
 }

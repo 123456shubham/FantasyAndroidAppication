@@ -59,6 +59,7 @@
             android:text="Team Preview"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:visibility="gone"
             android:id="@+id/edit_Preview"
             android:backgroundTint="@color/Color6"
             android:fontFamily="@font/amiko_bold"

@@ -60,7 +60,7 @@ public class EditPlayer {
         Matchid = teamId;
         c_i_d = comId;
         id = ID;
-        Toast.makeText(cc, ">>>" + id, Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(cc, ">>>" + id, Toast.LENGTH_SHORT).show();
 
         SharedPreferences preferences = cc.getSharedPreferences("MY_APP", Context.MODE_PRIVATE);
         String retrivedToken = preferences.getString("TOKEN", null);//second parameter default value.

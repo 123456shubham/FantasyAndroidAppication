@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -75,6 +76,7 @@ public class ChooseCaptainandVC extends AppCompatActivity {
     private String captainName,viceCaptain;
     private String captainNameTrue,viceCaptainTrue;
     private static String cid;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +92,10 @@ public class ChooseCaptainandVC extends AppCompatActivity {
         list=new ArrayList<>();
         createReqData1=new ArrayList<>();
         elevenPlayer11List=new ArrayList<>();
+        progressDialog=new ProgressDialog(ChooseCaptainandVC.this);
+
+        progressDialog.setTitle("Stumps11");
+        progressDialog.setMessage("Loading...");
 
 
         Intent intent=getIntent();
@@ -163,12 +169,13 @@ public class ChooseCaptainandVC extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onBackPressed() {
-        startActivity(new Intent(ChooseCaptainandVC.this, CreateTeams.class));
-        CustomIntent.customType(ChooseCaptainandVC.this,"right-to-left");
-        finish();
-    }
+//    @Override
+//    public void onBackPressed() {
+//        startActivity(new Intent(ChooseCaptainandVC.this, CreateTeams.class));
+//        CustomIntent.customType(ChooseCaptainandVC.this,"right-to-left");
+////        finish();
+////        onBackPressed();
+//    }
 
 
 
@@ -193,13 +200,7 @@ public class ChooseCaptainandVC extends AppCompatActivity {
                 createReqData.setVcaptain(data.isVcaption());
                 createReqData1.add(createReqData);
 
-
-
             }
-
-
-
-
 
             createTeamReq.setPlayer11(createReqData1);
 
@@ -221,13 +222,6 @@ public class ChooseCaptainandVC extends AppCompatActivity {
         createTeamReq.setTeamId(MATCH_ID);
         createTeamReq.setCid(cid);
 
-
-    //    Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
-
-
-
-
-
         try {
             CheckConnection.api.creteTeamTempData(tokenName,createTeamReq).enqueue(new Callback<DummyResponse>() {
                 @Override
@@ -237,8 +231,9 @@ public class ChooseCaptainandVC extends AppCompatActivity {
 
                         startActivity(new Intent(ChooseCaptainandVC.this, HomePage.class));
                         finish();
-//                             db.removeOldId();
-                        db.deleteReminder();
+                        progressDialog.dismiss();
+                        SelectedData.getSelectedData().clearData();
+
                     }else if(response.code()==500){
                         Toast.makeText(ChooseCaptainandVC.this, "Server Error 500"+response.errorBody().toString(), Toast.LENGTH_SHORT).show();
                     }else if(response.code()==422){
@@ -266,11 +261,10 @@ public class ChooseCaptainandVC extends AppCompatActivity {
 
 
 
-
-        Log.e("lllll",createReqData1+"");
-
-
             }
         }
+
+
+
 
 

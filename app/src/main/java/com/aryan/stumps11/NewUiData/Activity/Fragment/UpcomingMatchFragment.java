@@ -98,7 +98,7 @@ public class UpcomingMatchFragment extends Fragment {
 //
             upcomingMatchesList=new ArrayList<>();
             rq = Volley.newRequestQueue(getContext());
-            String connection= CheckConnection.BASE_URL+"/api/user/team/upcoming";
+            String connection= CheckConnection.BASE_URL+"/api/user/my-team/upcommimg";
             StringRequest stringRequest = new StringRequest(Request.Method.GET, connection, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {

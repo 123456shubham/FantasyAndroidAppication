@@ -35,7 +35,6 @@
                 android:visibility="visible" />
 
 
-
             <TextView
                 android:id="@+id/edit_team_create_team_time"
                 android:layout_width="wrap_content"
@@ -132,10 +131,11 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/edit_team_create_team_a_logo"
                 android:layout_width="45dp"
+
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:src="@color/Color1"
-                app:civ_border_width="1dp" />
+                app:civ_border_width="0dp" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/edit_team_create_team_b_logo"
@@ -144,7 +144,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
                 android:src="@color/Color1"
-                app:civ_border_width="1dp" />
+                app:civ_border_width="0dp" />
 
             <TextView
                 android:id="@+id/edit_team_create_team_a_name"

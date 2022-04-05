@@ -3,15 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_edit_cvcactivity.xml" value="0.1" />
+        <entry key="../../../../../../layout/custom_preview.xml" value="0.24814814814814815" />
+        <entry key="app/src/main/res/drawable/custom_button.xml" value="0.12" />
+        <entry key="app/src/main/res/drawable/custom_join_list_context.xml" value="0.12" />
+        <entry key="app/src/main/res/layout/activity_choose_captainand_v_c.xml" value="0.32653985507246375" />
+        <entry key="app/src/main/res/layout/activity_create_teams.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_edit_cvcactivity.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_edit_team.xml" value="0.11944444444444445" />
-        <entry key="app/src/main/res/layout/activity_green_background.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_green_background.xml" value="0.35555555555555557" />
+        <entry key="app/src/main/res/layout/activity_join_team.xml" value="0.333786231884058" />
         <entry key="app/src/main/res/layout/activity_verified_bank_account_details.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_wallet.xml" value="0.11574074074074074" />
         <entry key="app/src/main/res/layout/contestjoindialog.xml" value="0.11574074074074074" />
         <entry key="app/src/main/res/layout/cricketmatch.xml" value="0.11574074074074074" />
         <entry key="app/src/main/res/layout/custom_edit_cvc.xml" value="0.11574074074074074" />
+        <entry key="app/src/main/res/layout/custom_join_context__list.xml" value="0.31470588235294117" />
+        <entry key="app/src/main/res/layout/custom_join_team.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/custom_live_adapter.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/custom_my_team.xml" value="0.11018518518518519" />
+        <entry key="app/src/main/res/layout/fragment_joined_contest.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_my_teams.xml" value="0.333786231884058" />
         <entry key="app/src/main/res/layout/fragment_upcoming.xml" value="0.11574074074074074" />
+        <entry key="app/src/main/res/layout/player.xml" value="0.32653985507246375" />
+        <entry key="app/src/main/res/layout/playerlayout.xml" value="0.1" />
       </map>
     </option>
   </component>

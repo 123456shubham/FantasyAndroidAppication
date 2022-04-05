@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -57,23 +58,26 @@ public class EditCVCActivity extends AppCompatActivity {
     private RecyclerView rr;
     private String captainName,viceCaptain;
     private String captainNameTrue,viceCaptainTrue;
-
+    private ProgressDialog progressDialog;
+    private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_cvcactivity);
-
         next=findViewById(R.id.edit_Next);
         bb=findViewById(R.id.edit_Preview);
         imgBacKBtn=findViewById(R.id.edit_cvcs_back_btn);
-
         rr=findViewById(R.id.edit_CVC);
         rr.setHasFixedSize(false);
         rr.setLayoutManager(new LinearLayoutManager(EditCVCActivity.this));
         list=new ArrayList<>();
         createReqData1=new ArrayList<>();
         elevenPlayer11List=new ArrayList<>();
+        progressDialog=new ProgressDialog(EditCVCActivity.this);
+        id=getIntent().getStringExtra("id");
+        progressDialog.setTitle("Stumps11");
+        progressDialog.setMessage("Loading...");
 
 
         imgBacKBtn.setOnClickListener(new View.OnClickListener() {
@@ -88,6 +92,7 @@ public class EditCVCActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(EditCVCActivity.this, GreenBackground.class));
                 overridePendingTransition(0,0);
+                progressDialog.dismiss();
             }
         });
 
@@ -100,22 +105,16 @@ public class EditCVCActivity extends AppCompatActivity {
             }
         });
 
-
-
-
         SharedPreferences mob=getSharedPreferences("Mobile",MODE_PRIVATE);
         mobile=mob.getString("mKey","0");
         SharedPreferences sp=getSharedPreferences("MID", Context.MODE_PRIVATE);
         String mid=sp.getString("MatchID","0");
 
-        rr.setHasFixedSize(false);
-        rr.setLayoutManager(new LinearLayoutManager(EditCVCActivity.this));
-        list=new ArrayList<>();
         createReqData1=new ArrayList<>();
-
-        db=new EditDatabase(EditCVCActivity.this);
-        cc=db.EditDisplayPlayer(mobile);
-        cc.moveToFirst();
+//
+//        db=new EditDatabase(EditCVCActivity.this);
+//        cc=db.EditDisplayPlayer(mobile);
+//        cc.moveToFirst();
 
 
         for(SelectedData.data data:SelectedData.getSelectedData().getData().values()){
@@ -138,19 +137,11 @@ public class EditCVCActivity extends AppCompatActivity {
         finish();
     }
 
-
-
-
     private void addPlayer11(){
-
-
-
         SharedPreferences preferences1 = EditCVCActivity.this.getSharedPreferences("MY_APP", Context.MODE_PRIVATE);
         String retrivedToken1  = preferences1.getString("TOKEN",null);//second parameter default value.
         String tokenName="Bearer "+retrivedToken1;
-
         CreateTeamReq createTeamReq=new CreateTeamReq();
-
 
         createReqData1.clear();
         for(SelectedData.data data:SelectedData.getSelectedData().getData().values()){
@@ -165,14 +156,7 @@ public class EditCVCActivity extends AppCompatActivity {
             createReqData1.add(createReqData);
         }
 
-
-
-
-
         createTeamReq.setPlayer11(createReqData1);
-
-
-
         SharedPreferences CN=EditCVCActivity.this.getSharedPreferences("CName",MODE_PRIVATE);
 
         captainName=CN.getString("CNAME",null);
@@ -183,7 +167,7 @@ public class EditCVCActivity extends AppCompatActivity {
 //        Toast.makeText(this, "sgsf "+C, Toast.LENGTH_SHORT).show();
         createTeamReq.setTeamId(MATCH_ID);
 
-        createTeamReq.setTeamId(MATCH_ID);
+        createTeamReq.setId(id);
         try {
             CheckConnection.api.addPlayer11(tokenName,createTeamReq).enqueue(new Callback<DummyResponse>() {
                 @Override
@@ -191,12 +175,17 @@ public class EditCVCActivity extends AppCompatActivity {
                     if (response.isSuccessful()){
                         startActivity(new Intent(EditCVCActivity.this, HomePage.class));
                         finish();
-//                             db.removeOldId();
-                    //    db.EditdeleteReminder();
+
                         Toast.makeText(EditCVCActivity.this, " "+response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
+
                     }else if(response.code()==500){
+                        progressDialog.dismiss();
+
                         Toast.makeText(EditCVCActivity.this, "Server Error 500"+response.errorBody().toString(), Toast.LENGTH_SHORT).show();
                     }else if(response.code()==422){
+                        progressDialog.dismiss();
+
                         Toast.makeText(EditCVCActivity.this, "Error 422", Toast.LENGTH_SHORT).show();
                     }else{
                         Toast.makeText(EditCVCActivity.this, "ewrfdvn", Toast.LENGTH_SHORT).show();

@@ -5,11 +5,13 @@ import static com.aryan.stumps11.EditTeam.EditPlayer.wkQ;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -35,9 +37,13 @@ import com.aryan.stumps11.Extra.CommonData;
 import com.aryan.stumps11.Model.ModelClass;
 import com.aryan.stumps11.R;
 import com.aryan.stumps11.api_integration.CheckConnection;
+import com.bumptech.glide.Glide;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.tabs.TabLayout;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,7 +61,6 @@ public class EditTeamActivity extends AppCompatActivity implements SharedPrefere
     private TextView t80;
     private MaterialButton bb,preview;
     private SharedPreferences sp;
-    // public static int hello=0,wk=0,bat=0,all=0,bwl=0;
     private  int hello,wk,bat,all,bwl;
     private ProgressBar pp;
     private String teamNameA;
@@ -70,15 +75,8 @@ public class EditTeamActivity extends AppCompatActivity implements SharedPrefere
     private  String mobile;
     private List<Integer> addCredit;
     private String pname,prole,C,vc,pid,credit;
-    //    private static int addCreditPoint;
     private TextView tvCreateTeamName;
     private TextView tvCreateTeamTime;
-    private String  totalWk;
-    private String totalAll;
-    private String totalBat;
-    private String totalBwl;
-
-
     private ImageView imgBacKBtn;
     private List<EditTeamModel> list;
     private CreateReqData createReqData;
@@ -89,7 +87,7 @@ public class EditTeamActivity extends AppCompatActivity implements SharedPrefere
     public static String comId;
     public static String ID;
     private  int all1,wk1,bat1,bwl1;
-
+    private ProgressDialog progressDialog;
 
   private SharedPreferences sharedPreferences;
 
@@ -97,19 +95,20 @@ public class EditTeamActivity extends AppCompatActivity implements SharedPrefere
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_team);
-
         sharedPreferences=getSharedPreferences("Counts",MODE_PRIVATE);
-        if (sharedPreferences.contains("bKey")){
+        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+        progressDialog=new ProgressDialog(EditTeamActivity.this);
+        progressDialog.setTitle("Stumps11");
+        progressDialog.setMessage("Loading...");
 
+
+        if (sharedPreferences.contains("bKey")){
             hello=sharedPreferences.getInt("Key",0);
             wk=sharedPreferences.getInt("wKey",0);
             bat=sharedPreferences.getInt("bKey",0);
             all=sharedPreferences.getInt("aKey",0);
             bwl=sharedPreferences.getInt("bwlKey",0);
-
             creditPoints=sharedPreferences.getFloat("creditPoints",0);
-
-
             Log.e("jkhkh",creditPoints+"");
         }
 
@@ -129,6 +128,16 @@ public class EditTeamActivity extends AppCompatActivity implements SharedPrefere
         vv=findViewById(R.id.edit_team_viewpager);
         pp=findViewById(R.id.edit_team_progressBar);
         t80=findViewById(R.id.edit_team_count_player);
+
+        setTeamDetails();
+
+        imgBacKBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
         preview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,8 +146,8 @@ public class EditTeamActivity extends AppCompatActivity implements SharedPrefere
             }
         });
         createReqData1=new ArrayList<>();
-//        SharedPreferences mob=getSharedPreferences("Mobile",MODE_PRIVATE);
-//        mobile=mob.getString("mKey","0");
+        SharedPreferences mob=getSharedPreferences("Mobile",MODE_PRIVATE);
+        mobile=mob.getString("mKey","0");
 //        SharedPreferences sp=getSharedPreferences("MY_APP", Context.MODE_PRIVATE);
 //
 //        cc=db.EditDisplayPlayer(mobile);
@@ -231,142 +240,6 @@ public class EditTeamActivity extends AppCompatActivity implements SharedPrefere
 
     }
 
-
-
-
-
-
-    private void addPlayer11(){
-
-
-
-        SharedPreferences mob=getSharedPreferences("Mobile",MODE_PRIVATE);
-        mobile=mob.getString("mKey","0");
-        SharedPreferences sp=getSharedPreferences("MY_APP", Context.MODE_PRIVATE);
-
-
-        if (!db.equals(MATCH_ID)){
-            cc=db.EditDisplayPlayer(mobile);
-            cc.moveToFirst();
-            do{
-                pid=cc.getString(1);
-                String secoind=cc.getString(2);
-                pname=cc.getString(3);
-//            prole=cc.getString(4);
-                String pcountry=cc.getString(4);
-
-                ppts=cc.getString(5);
-
-                credit=cc.getString(7);
-                C=cc.getString(8);
-                vc=cc.getString(9);
-
-
-                try{
-                    int i=Integer.parseInt(credit);
-
-                    addCredit=new ArrayList<Integer>();
-                    addCredit.add(i);
-                    for (int totalCredit : addCredit){
-                       // addCreditPoint +=totalCredit;
-                        //    Toast.makeText(this, "i<<<"+addCreditPoint, Toast.LENGTH_SHORT).show();
-
-                    }
-                }catch (Exception e){
-                    //  Toast.makeText(this, "Exception "+e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-
-
-
-                createReqData=new CreateReqData();
-
-                createReqData.setPid(pid);
-                createReqData.setCredit(credit);
-                createReqData.setName(pname);
-
-
-                createReqData1.add(createReqData);
-
-//            createReqData.setCaptain(C);
-//            createReqData.setVcaptain(vc);
-
-
-//
-
-            }while (cc.moveToNext());
-        }
-
-
-//        db.deleteReminder();
-        SharedPreferences preferences = EditTeamActivity.this.getSharedPreferences("MY_APP", Context.MODE_PRIVATE);
-        String retrivedToken  = preferences.getString("TOKEN",null);//second parameter default value.
-        String tokenName="Bearer "+retrivedToken;
-
-        CreateTeamReq createTeamReq=new CreateTeamReq();
-//
-        createTeamReq.setTeamId(MATCH_ID);
-        createTeamReq.setPlayer11(createReqData1);
-
-
-
-
-
-// check credit point is less than or equal to 100
-
-
-        try {
-            CheckConnection.api.creteTeamTempData(tokenName,createTeamReq).enqueue(new Callback<DummyResponse>() {
-                @Override
-                public void onResponse(Call<DummyResponse> call, Response<DummyResponse> response) {
-                    if (response.isSuccessful()){
-
-//                            db.removeOldId();
-                        db.EditdeleteReminder();
-
-                    assert response.body() != null;
-                        Toast.makeText(EditTeamActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-//
-
-                        Intent intent1=new Intent(EditTeamActivity.this, ChooseCaptainandVC.class);
-                        intent1.putExtra(CommonData.Match_id,MATCH_ID);
-                        //    intent1.putExtra("id",userId);
-                        startActivity(intent1);
-                        // CustomIntent.customType(CreateTeams.this,"left-to-right");
-                        finish();
-                    }else if(response.code()==500){
-                        Toast.makeText(EditTeamActivity.this, "Server Error 500"+response.errorBody().toString(), Toast.LENGTH_SHORT).show();
-                    }else if(response.code()==422){
-                        Toast.makeText(EditTeamActivity.this, "Error 422", Toast.LENGTH_SHORT).show();
-                    }else{
-                        Toast.makeText(EditTeamActivity.this, "ewrfdvn", Toast.LENGTH_SHORT).show();
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<DummyResponse> call, Throwable t) {
-                    Toast.makeText(EditTeamActivity.this, "onFailure "+t.getMessage(), Toast.LENGTH_SHORT).show();
-
-                }
-            });
-
-        }catch (Exception e){
-            Toast.makeText(this, "Exception "+e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-
-
-//        if (addCreditPoint>100){
-//            Toast.makeText(CreateTeams.this,"Your Credit Point is greater than 100 < : "+addCreditPoint,Toast.LENGTH_SHORT).show();
-//        }else{
-//
-//        }
-
-
-
-
-
-    }
-
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -380,6 +253,71 @@ public class EditTeamActivity extends AppCompatActivity implements SharedPrefere
         s.clear();
         s.apply();
     }
+
+    private void setTeamDetails(){
+
+        teamNameA=SelectedData.teamNameA;
+        teamNameB=SelectedData.teamNameB;
+        String imageTeam1=SelectedData.teamAImage;
+        String imageTeam2=SelectedData.teamBImage;
+        String time=SelectedData.headTime;
+        tvNameB.setText(teamNameB);
+        tvNameA.setText(teamNameA);
+        String hd=SelectedData.teamsheader;
+        tvCreateTeamName.setText(hd);
+
+
+        try{
+            DateTimeFormatter dtf = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            }
+            LocalDateTime now = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                now = LocalDateTime.now();
+            }
+
+            LocalDateTime matchDateTime = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                matchDateTime = LocalDateTime.parse(time,
+                        dtf);
+            }
+
+
+            long millis = 0;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                millis = Duration.between(now, matchDateTime).toMillis();
+            }
+            new CountDownTimer(millis, 1000) {
+                public void onTick(long millisUntilFinished) {
+                    long seconds = millisUntilFinished / 1000;
+                    long minutes = seconds / 60;
+                    long hours = minutes / 60;
+                    long dd = hours / 24;
+                    String time = dd + " days : " + hours % 24 + " hrs : " + minutes % 60 + " min : " + seconds % 60 + " sec";
+                    tvCreateTeamTime.setText(time);
+                }
+
+                public void onFinish() {
+                    //Close the popup
+                    String time = "0 days : 0 hrs : 0 min : 0 sec";
+                    tvCreateTeamTime.setText(time);
+                }
+            }.start();
+
+        }catch (Exception e){
+
+            e.printStackTrace();
+
+            Toast.makeText(this, "Exception :- "+e, Toast.LENGTH_SHORT).show();
+        }
+//        tvCreateTeamTime.setText(time);
+
+        Glide.with(EditTeamActivity.this).load(imageTeam1).into(circleImageViewTeamA);
+        Glide.with(EditTeamActivity.this).load(imageTeam2).into(circleImageViewTeamB);
+
+    }
+
 
 
 

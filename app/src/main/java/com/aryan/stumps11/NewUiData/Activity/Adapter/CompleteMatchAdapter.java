@@ -37,32 +37,13 @@ public class CompleteMatchAdapter extends RecyclerView.Adapter<CompleteMatchAdap
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_completed_adapter,parent,false);
         return new ViewHolder(view);
-
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-
-        //https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY_hVLYK-HmPeDhUaEu_F4oQ1OTzGj3AHshw&usqp=CAU
-//        Glide.with(context).load(matchList.get(position).getIv_teamA()).into(holder.iv_teamA);
-//        Glide.with(context).load(matchList.get(position).getIv_teamB()).into(holder.iv_teamB);
         Glide.with(context).load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY_hVLYK-HmPeDhUaEu_F4oQ1OTzGj3AHshw&usqp=CAU").into(holder.iv_teamA);
         Glide.with(context).load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY_hVLYK-HmPeDhUaEu_F4oQ1OTzGj3AHshw&usqp=CAU").into(holder.iv_teamB);
-
-//        ElevenPlayerContext elevenPlayerContext=elevenPlayerContexts.get(position);
-//        ElevenPlayerData elevenPlayerId=elevenPlayerData.get(position);
-//        String matchId=elevenPlayerId.getId();
-//
-//        String matchTitle=elevenPlayerContext.getTitle();
-//        String matchTeamNameA=elevenPlayerContext.getTeamATittle();
-//        String matchTeamNameB=elevenPlayerContext.getTeamBTittle();
-//
-//        holder.tv_teamAName.setText(matchTeamNameA);
-//        holder.tv_teamBName.setText(matchTeamNameB);
-//        holder.tv_TourName.setText(matchTitle);
-
-
         holder.tv_TourName.setText(matchList.get(position).getTourName());
         holder.tv_MatchStatus.setText(matchList.get(position).getMatchStatus());
         holder.tv_teamAName.setText(matchList.get(position).getTeamAName());

@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.aryan.stumps11.CreateTeam.SelectedData;
 import com.aryan.stumps11.Extra.CommonData;
 import com.aryan.stumps11.Home.HomePage;
 import com.aryan.stumps11.HomePageClick.HomePageClick;
@@ -140,7 +141,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
                 intent.putExtra("teamImage1", list.get(position).getTimage1());
                 intent.putExtra("teamImage2", list.get(position).getTimage2());
                 intent.putExtra("time", time);
-
+                SelectedData.teamsheader=list.get(position).getTname1() + " Vs " +list.get(position).getTname2();
+                SelectedData.headTime=time;
+                SelectedData.teamNameA=list.get(position).getTname1();
+                SelectedData.teamNameB=list.get(position).getTname2();
+                SelectedData.teamAImage=list.get(position).getTimage1();
+                SelectedData.teamBImage=list.get(position).getTimage2();
                 cc.startActivity(intent);
 
                 ((AppCompatActivity) cc).finish();

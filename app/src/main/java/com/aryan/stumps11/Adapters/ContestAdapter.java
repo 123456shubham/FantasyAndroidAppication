@@ -34,6 +34,7 @@ import com.aryan.stumps11.ContestClick.ContestClick;
 import com.aryan.stumps11.CreateTeam.CVCAdapter;
 import com.aryan.stumps11.CreateTeam.ChooseCaptainandVC;
 import com.aryan.stumps11.CreateTeam.DataBase;
+import com.aryan.stumps11.CreateTeam.SelectedData;
 import com.aryan.stumps11.Extra.CommonData;
 import com.aryan.stumps11.Home.HomePage;
 import com.aryan.stumps11.HomePageClick.HomePageClick;
@@ -43,6 +44,8 @@ import com.aryan.stumps11.Signup.MobileNumber;
 import com.aryan.stumps11.Wallet.Wallet;
 import com.aryan.stumps11.api_integration.CheckConnection;
 import com.aryan.stumps11.joinContext.JoinContextResponse;
+import com.aryan.stumps11.joinTeam.JoinTeamActivity;
+import com.aryan.stumps11.joinTeam.JoinTeamAdapter;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.button.MaterialButton;
 
@@ -168,40 +171,48 @@ public class ContestAdapter extends RecyclerView.Adapter<ContestAdapter.ViewHold
                     public void onClick(View view) {
 
 
+
+
                         if (mm.getEntryPrice()<=balance){
 
 
 
                             //----------------------------
 
-                            match_id=Matchid;
-                            try {
-                                CheckConnection.api.joinContext(tokenName,"62383ff7082eb0d6e9dfbb4b", String.valueOf(mm.getEntryPrice())).enqueue(new Callback<JoinContextResponse>() {
-                                    @Override
-                                    public void onResponse(Call<JoinContextResponse> call, Response<JoinContextResponse> response) {
-                                        if (response.isSuccessful()){
-                                            cc.startActivity(new Intent(cc, HomePageClick.class));
-//                                        finish();
-//                db.removeOldId();
-                                            Toast.makeText(cc, " "+response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                                        }else if(response.code()==500){
-                                            Toast.makeText(cc, "Server Error 500"+response.errorBody().toString(), Toast.LENGTH_SHORT).show();
-                                        }else{
-                                            Toast.makeText(cc, "Some thing went wrong ", Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
+//                            match_id=Matchid;
+//                            try {
+//                                CheckConnection.api.joinContext(tokenName,"62383ff7082eb0d6e9dfbb4b", String.valueOf(mm.getEntryPrice())).enqueue(new Callback<JoinContextResponse>() {
+//                                    @Override
+//                                    public void onResponse(Call<JoinContextResponse> call, Response<JoinContextResponse> response) {
+//                                        if (response.isSuccessful()){
+//                                            cc.startActivity(new Intent(cc, HomePageClick.class));
+////                                        finish();
+////                db.removeOldId();
+//                                            Toast.makeText(cc, " "+response.body().getMessage(), Toast.LENGTH_SHORT).show();
+//                                        }else if(response.code()==500){
+//                                            Toast.makeText(cc, "Server Error 500"+response.errorBody().toString(), Toast.LENGTH_SHORT).show();
+//                                        }else{
+//                                            Toast.makeText(cc, "Some thing went wrong ", Toast.LENGTH_SHORT).show();
+//                                        }
+//                                    }
+//
+//                                    @Override
+//                                    public void onFailure(Call<JoinContextResponse> call, Throwable t) {
+//                                        Toast.makeText(cc, "onFailure "+t.getMessage(), Toast.LENGTH_SHORT).show();
+//
+//                                    }
+//                                });
+//
+//                            }catch (Exception e){
+//                                Toast.makeText(cc, "Exception "+e.getMessage(), Toast.LENGTH_SHORT).show();
+//                            }
+//
 
-                                    @Override
-                                    public void onFailure(Call<JoinContextResponse> call, Throwable t) {
-                                        Toast.makeText(cc, "onFailure "+t.getMessage(), Toast.LENGTH_SHORT).show();
-
-                                    }
-                                });
-
-                            }catch (Exception e){
-                                Toast.makeText(cc, "Exception "+e.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-
+                            Intent selectTeam=new Intent(cc, JoinTeamActivity.class);
+                            selectTeam.putExtra("match_id",Matchid);
+                            SelectedData.walletBalance=String.valueOf(balance);
+                            SelectedData.joinAmount=String.valueOf(mm.getEntryPrice());
+                            cc.startActivity(selectTeam);
 
 
 

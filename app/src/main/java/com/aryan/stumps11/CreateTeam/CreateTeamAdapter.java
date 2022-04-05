@@ -228,8 +228,9 @@ public class CreateTeamAdapter extends RecyclerView.Adapter<CreateTeamAdapter.Vi
 
             Log.e("mnkhkjjk",SelectedData.getSelectedData().getCreditPoints()+"");
 
-//
-            if (SelectedData.getSelectedData().getCreditPoints() > 100.0) {
+            float f=100.0f;
+            float cal=SelectedData.getSelectedData().getCreditPoints() + Float.parseFloat(list.get(position).getCredits());
+            if (cal> f) {
                 Toast.makeText(cc, "We can not add more than 100 Credit Points", Toast.LENGTH_SHORT).show();
                 cb.setChecked(false);
                 return;
@@ -244,13 +245,14 @@ public class CreateTeamAdapter extends RecyclerView.Adapter<CreateTeamAdapter.Vi
 
             }
 
-//
+
 //                if(SelectedData.getSelectedData().getTeamCount(list.get(position).getTname())>=7){
 //                    Toast.makeText(cc, "We can not add more than 7 player in a team", Toast.LENGTH_SHORT).show();
 //                    cb.setChecked(false);
 //                    return;
-//
+
 //                }
+
             if (list.get(position).getRole().equals("wk")) {
                 //   int value = fun(d, 1, key, cb, "wk");
                 if (playerCount(SelectedData.Role.WK, 1, list.get(position).getTname())) {

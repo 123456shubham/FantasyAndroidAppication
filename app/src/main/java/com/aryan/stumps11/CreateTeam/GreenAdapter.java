@@ -1,5 +1,6 @@
 package com.aryan.stumps11.CreateTeam;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -43,12 +44,12 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
      ModelClass mm=list.get(position);
      SharedPreferences mob=cc.getSharedPreferences("Mobile",cc.MODE_PRIVATE);
      String mobile=mob.getString("mKey","0");
      DataBase db=new DataBase(cc);
-     holder.i26.setImageResource(R.drawable.image);
+     holder.i26.setImageResource(R.drawable.player);
      holder.t102.setText(list.get(position).getPlayername());
      holder.t103.setText(list.get(position).getPcredit());
      holder.t104.setText(list.get(position).getCap());

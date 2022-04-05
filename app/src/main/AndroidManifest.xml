@@ -33,6 +33,9 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".joinTeam.JoinTeamActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditTeam.EditCVCActivity"
             android:exported="false" />
         <activity
